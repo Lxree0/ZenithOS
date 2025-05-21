@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>ZENITH OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="logo">ZENITH</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Chi siamo?</a></li>
+    <li><a href="ZenithOS.html">Il nostro Sistema operativo</a></li>
+    <li><a href="Thread.html">Gestione thread</a></li>
+    <li><a href="Elaborazione.html">Programmazione parallela</a></li>
+  </ul>
+  </nav>
+
+  
+  
+  <div style="flex-direction: column; margin-top: 10%;">
+    <h1>Chi siamo?</h1>
+    <p class="fancy-paragraph">Siamo un’azienda composta da 4 ragazzi Lorenzo Lega , Samuel Luggeri , Lorenzo Mangia e Marco Marasco specializzata nella progettazione e produzione di PC ad alte prestazioni. Abbiamo deciso di espandere il nostro know-how nel settore dello sviluppo software, dando vita al nostro primo sistema operativo: Zenith OS. Una piattaforma moderna, intuitiva e performante, pensata per offrire un'esperienza d'uso semplice ed efficiente.</p>
+    <h1>Cos'è zenith os?</h1>
+    <p class="fancy-paragraph">Zenith OS è un sistema operativo innovativo e leggero, adatto a qualsiasi tipo di computer, anche i più datati, offrendo loro nuova vita. La sua interfaccia grafica semplice e user-friendly permette un utilizzo immediato da parte di utenti di ogni età e competenza. Il sistema è altamente personalizzabile, flessibile e sicuro, pensato sia per utenti privati sia per professionisti e aziende. Garantisce compatibilità con una vasta gamma di file, programmi e dispositivi.</p>
+    <h1>Contatti utili</h1>
+    <table class="roundrobin-table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Contatto Telefonico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lorenzo Lega</td>
+      <td>lorenzolega@gmail.com</td>
+      <td>2363826381</td>
+    </tr>
+    <tr>
+      <td>Marco Marasco</td>
+      <td>marcomarasco@gmail.com</td>
+      <td>4656299210</td>
+    </tr>
+    <tr>
+      <td>Lorenzo Mangia</td>
+      <td>lorenzomangia@gmail.com</td>
+      <td>8737239823</td>
+    </tr>
+    <tr>
+      <td>Samuel Luggeri</td>
+      <td>samuelluggeri@gmail.com</td>
+      <td>7393223923</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  
+   
+ <footer>
+  <span class="footer-brand">&copy; 2025 ZENITH</span>
+  <div class="footer-note">Contatti</div>
+  <div class="footer-note"><strong>email: </strong>lorenzolega@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    2363826381<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>marcomarasco@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    4656299210<br></div>
+  
+  <div class="footer-note"><strong>email: </strong>lorenzomangia@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    8737239823<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>samuelluggeri@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    7393223923<br></div>
+  </footer>
+
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

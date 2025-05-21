@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>zenith os</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  </style>
+</head>
+
+<body>
+    <nav class="navbar">
+    <div class="logo">ZENITH</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Whoarewe.html">Chi siamo?</a></li>
+      <li><a href="#">Il nostro Sistema operativo</a></li>
+      <li><a href="Thread.html">Gestione thread</a></li>
+      <li><a href="Elaborazione.html">Programmazione parallela</a></li>
+    </ul>
+    </nav>
+    <h1 style="margin-top: 3%;"> Introduzione al nostro sistema operativo</h1>
+
+    <div style="display: flex;flex-direction: column; align-items: center; margin-top: 5%;gap: 5%;">
+        <video class="mini-video" src="ZENITH OS SPOT.mp4" controls></video>
+        <h1>Performance e Multitasking</h1>
+        <p class="fancy-paragraph">Per ottimizzare l’esecuzione simultanea di più programmi, Zenith OS utilizza l’algoritmo di scheduling Round Robin, che assegna a ciascun processo un intervallo di tempo (quanto) per l’uso della CPU. Questo metodo garantisce equità, efficienza e tempi di risposta ridotti, supportando il parallelismo sia a livello hardware che software.</p>
+        <br>
+        <br>
+        <table class="roundrobin-table">
+        <thead>
+          <tr>
+            <th>Vantaggi</th>
+            <th>Svantaggi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Equa distribuzione delle risorse</td>
+            <td>Se il tempo di slicing del sistema operativo (time slice) è basso, significa che i processi vengono interrotti frequentemente, limitando il tempo che ciascun processo può effettivamente utilizzare la CPU. Questo porta a una riduzione dell'efficienza del processore</td>
+          </tr>
+          <tr>
+            <td>Nessuna dipendenza dal tempo di burst</td>
+            <td>Impiega più tempo per cambiare risorse rispetto ad altri algoritmi.</td>
+          </tr>
+          <tr>
+            <td>Evita fame ed effetto convoglio</td>
+            <td>Un periodo troppo breve per il quanto di tempo implica una frequenza elevata di commutazioni del contesto, di conseguenza ritardo nella prestazione del processore.</td>
+          </tr>
+          <tr>
+            <td>Facile da implementare</td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h1>Gestione delle Interruzioni</h1>
+      <p class="fancy-paragraph">Zenith OS gestisce due tipi principali di interrupt:
+        <br>
+        <br>
+        <strong>Interrupt hardware</strong>, generati da dispositivi esterni o interni, gestiti da routine dedicate che sospendono e riprendono i processi in modo sicuro.
+        <br>
+        <br>
+        <strong>Interrupt software</strong>, generati da programmi per comunicare col kernel, utili per operazioni di I/O o gestione della memoria.
+        Il sistema salva e ripristina lo stato dei processi attraverso strutture dedicate come il PCB (Process Control Block).
+      </p>
+      </div>
+
+      <h1>Allocazione delle Risorse</h1>
+      <p class="fancy-paragraph">L’allocazione delle risorse è rappresentata attraverso <a href="screenptt.png">i grafi di Holt</a> (clicca per vedere un esempio) , che mostrano le relazioni tra processi e risorse, inclusi i casi di attesa o blocco.</p>
+      <h1>Gestione dei Processi in C</h1>
+      <p class="fancy-paragraph">Essendo un sistema operativo open source rendiamo disponibili i codici per la creazione di un processo.
+        <br>
+        Il sistema utilizza la funzione fork() per creare processi figli, il genitore può sospendersi tramite wait() e recuperare lo stato di uscita del figlio. 
+      </p>
+
+      <img style="width: 30%;margin-left: 35%;margin-bottom: 5%;"src="codice c.png" alt="">
+      
+
+
+
+    <footer>
+      <span class="footer-brand">&copy; 2025 ZENITH</span>
+      <div class="footer-note">Contatti</div>
+      <br>
+      <div class="footer-note"><strong>email: </strong>lorenzolega@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    2363826381<br></div>
+      
+      <div class="footer-note"><strong>email: </strong>marcomarasco@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    4656299210<br></div>
+      
+      <div class="footer-note"><strong>email: </strong>lorenzomangia@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    8737239823<br></div>
+        
+      <div class="footer-note"><strong>email: </strong>samuelluggeri@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    7393223923<br></div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        hamburger.classList.toggle('active');
+      });
+  </script>
+</body>
+</html>

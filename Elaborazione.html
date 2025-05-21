@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ZENITH OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <div class="logo">ZENITH</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Whoarewe.html">chi siamo?</a></li>
+      <li><a href="ZenithOS.html">Il nostro Sistema operativo</a></li>
+      <li><a href="Thread.html">Gestione thread</a></li>
+      <li><a href="#">Programmazione parallela</a></li>
+    </ul>
+  </nav>
+
+  <div style="display: flex;flex-direction: column; align-items: center; margin-top: 10%;gap: 5%;">
+    <h1>Elaborazione sequenziale e concorrente</h1>
+    <p class="fancy-paragraph">Ovviamente il nostro sistema operativo implementa da ora con il nuovo aggiornamento, l'elaborazione concorrente ma andiamo
+      ad osservare nel dettaglio il loro funzionamento.
+    </p>
+
+    <h1>Elaborazione sequenziale</h1>
+    <p class="fancy-paragraph">Con elaborazione sequenziale s'intende l'esecuzione di un programma che genera un
+      processo sequenziale con un ordinamento totale delle azioni che vengono eseguite.
+      Essa, è un concetto fondamentale dell'informatica in quantoi gli algoritmi che vengono da noi sviluppati sono
+      composti da una sequenza finita di istruzioni.
+    </p>
+
+    <p class="fancy-paragraph">Esistono tuttavia, programmi che per la loro corretta esecuzione necessitano di
+      elaborazioni parallele come ad esempoi il multiplayer all'interno di un videogioco.
+      in questo caso l'elaborazione sequenziale non è sufficiente, per questo introduciamo adesso...
+    </p>
+
+    <h1>La programmazione concorrente</h1>
+    <p class="fancy-paragraph">Con programmazione concorrente intendiamo le tecniche
+      e gli strumenti utilizzati per descrivere il comportamento di più processi
+      che vengono eseguiti nello stesso momento sulla stessa macchina.
+      Tuttavia questo tipo di elaborazione concorrente si verifica solo se la macchina
+      sia dotata di un' architettura multiprocessore. <br>
+      In caso contrario, avviene un parallelismo "virtualizzato" grazie alla multiprogrammazione.
+    </p>
+    <h1>Cosa succede in un sistema multiprogrammato?</h1>
+    <p class="fancy-paragraph">In un sistema multiprogrammato i programmi utente e le singole
+      funzioni svolte dall'os sono considerati processi che concorrono alle stesse risorse.</p>
+
+    <h1>Cos'è quindi un sistema concorrente?</h1>
+    <p class="fancy-paragraph">Un sistema concorrente è un sistema che gestisce
+      contemporaneamente un insieme di attività diverse che,
+      cooperano oppure concorrono per l'uso della stessa risorsa.</p>
+
+    <h1>Grafo delle Precedenze</h1>
+    <p class="fancy-paragraph">Un grafo delle precedenze è un diagramma che rappresenta l’ordine delle attività in un
+      progetto, mostrando quali attività devono essere completate prima di altre. <br>
+      Prendiamo d'esempio l'espressione matematica <br>
+      [(4 + 2) - (10 \ 2)]^2 * [(8-2) / (4+2)].
+    </p>
+
+      <img src="GrafoDellePrecedenze.png" alt="GrafoDellePrecedenze" style="width: 50%;">
+      <p class="fancy-paragraph">
+        Lo pseudo-codice che descrive questo grafico è il seguente:
+      </p>
+
+      <pre><code>
+      cobegin
+        cobegin
+          <strong>A</strong>: 4 + 2
+          <strong>B</strong>: 10 / 2
+        coend
+        <strong>E</strong>: A - B
+        <strong>E²</strong>: E ^ 2
+      coend
+
+      cobegin
+        cobegin
+          <strong>C</strong>: 8 - 2
+          <strong>D</strong>: 4 + 2
+        coend
+        <strong>F</strong>: C / D
+      coend
+
+      <strong>Risultato</strong>: E² * F
+      </code></pre>
+
+    <h1>La Fork join</h1>
+    <p class="fancy-paragraph">La fork join è un costrutto che serve per descrivere l'esecuzione parallela di segmenti di codice, scomponendo un processo in due processi, la join poi servirà successivamente per riunire i due processi in uno solo. <br></p>
+    <h1>La Fork</h1>
+    <p class="fancy-paragraph">La fork corrisponde alla divisione di un nodo in due rami, se parliamo di processi il processo padre si divide creando un processo figlio. Cosi il codice del processo padre e figlio viene eseguito in parallelo. Qui sotto è riportato un esempio della fork</p>
+    <img src="fork.jpg" style="width: 20%;border-radius: 5%;" alt="">
+    <h1>La join</h1>
+    <p class="fancy-paragraph">La join invece è il contrario della fork, ovvero i processi quando sono divisi, quando viene chiamata la join si riuniscono in un solo processo e si sincronizzano. <br><br> Esiste una seconda versione della join ovvero la <strong>join(count)</strong>. Questa ha la stessa funzione della join soltanto che ha in più la variabile <strong>count</strong>, che è una variabile intera che non può essere negativa e indica il numero di processi che si devono riunire e consente quindi di riunire più processi rispetto alla join normale che ne unisci solo 2.</p>
+    <img src="join.jpg" style="width: 20%;margin-bottom: 20px;border-radius: 5%;"  alt="">
+
+    <h1>Cobegin-Coend</h1>
+    <p class="fancy-paragraph">C'è un'altro costrutto che c'è il Cobegin-Coend. Attraverso il <strong>Cobegin</strong> si può indicare il numero di processi che iniziano contemporaneamente l'esecuzione e poi con <strong>Coend</strong> il punto in cui tutti i processi terminano l'esecuzione in un punto</p>
+      <img src="Es_Cobegin&Coend.png" style="border-radius: 5%;" alt="">
+      <pre class="fancy-paragraph"><code>
+        <p><strong>codice per l'esempio</strong> <br><br></p>
+        Inizio{
+          S1
+          <strong>cobegin</strong>
+          S2
+          S3            // qui vengon svolte i codici parallelamente
+          S4
+          <strong>coend</strong>
+          S5
+      }fine
+    </code></pre>
+    
+    <h1>Il DeadLock</h1>
+    <p class="fancy-paragraph">Deadlock 
+      Con il deadlock andiamo a indicare delle situazioni nelle quali dei processi si ostacolano a vicenda impedendomi a vicenda di portare a termine il lavoro. Non tutti i problemi però portano alla situazione di deadlock, affinché ci sia questo infatti sono necessarie 4 condizioni che devono verificarsi contemporaneamente e sono:
+    </p>
+
+     <ul class="fancy-paragraph">
+        <li>mutua esclusione, ogni risorsa è assegnata solo ad un processo o è libera</li>
+        <li>assenza di prerilascio, le risorse usate in un processo non possono essere rilasciate prima del completamento dell'esecuzione </li>
+        <li>richieste bloccanti, hold and wait</li>
+        <li>attesa circolare, nel sistema devono essere presenti almeno due processi nei quale uno di questi è in attesa di una risorsa usata dall'altro processo.Questo può dimostrarsi con i grafi di holt.</li>
+      </ul>
+
+    <h1> Per affrontare il deadlock ci sono 4 modi:</h1>
+    <ul class="fancy-paragraph">
+      <li>detection e recovery, riconoscerlo e eliminarlo</li>
+      <li>avoidance, evitare che questo problema avvenga tramite delle specifiche allocazioni</li>
+      <li>preventivo, impedire che questo avvenga facendo si che una delle 4 condizioni non si verifichi</li>
+      <li>ignorare il problema</li>
+    </ul>
+
+    <h1>Il problema dei filosofi</h1>
+    <p class="fancy-paragraph">Un classico esempio è il problema dei filosofi a cena ci sono 5 filosofi, 5 piatti e 5 forchette, ogni filosofo agisce in due fasi: <br>
+      <br><br>
+      -la prima fase in cui pensa, lasciando le forchette sul tavolo <br><br>
+      -la seconda fase in cui mangia, per la quale ha bisogno di due forchette, una per mano
+      <br><br>
+      questo si può risolvere in vari modi per esempio:
+      prendiamo come esempio un filosofo qualunque, appena smette di pensare prende prima la forchetta sinistra, poi quella destra e mangia finché non è sazio, dopo lascia le forchette; questo modo di risolvere il problema può portare a degli intoppi come per esempio se tutti i filosofi dovessero prendere la forchetta di sinistra contemporaneamente nessuno mangerebbe, questo possiamo risolverlo con l'allocazione totale e quindi assegnando tutte le risorse all'inizio e contemporaneamente, in questo caso do entrambe le forchette al filosofo contemporaneamente
+    </p>
+    <img src="il problema.png" style="margin-bottom: 20px;" alt="">
+  
+  </div>
+
+   
+
+  <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('show');
+          hamburger.classList.toggle('active');
+        });
+  </script>
+
+
+ <footer>
+  <span class="footer-brand">&copy; 2025 ZENITH</span>
+  <div class="footer-note">Contatti</div>
+  <div class="footer-note"><strong>email: </strong>lorenzolega@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    2363826381<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>marcomarasco@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    4656299210<br></div>
+  
+  <div class="footer-note"><strong>email: </strong>lorenzomangia@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    8737239823<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>samuelluggeri@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    7393223923<br></div>
+  </footer>
+</body>
+</html>

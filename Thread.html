@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>ZENITH OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar">
+  <div class="logo">ZENITH</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Whoarewe.html">chi siamo?</a></li>
+    <li><a href="ZenithOS.html">Il nostro Sistema operativo</a></li>
+    <li><a href="#">Gestione thread</a></li>
+    <li><a href="Elaborazione.html">Programmazione parallela</a></li>
+  </ul>
+  </nav>
+
+  <div style="display: flex;flex-direction: column; align-items: center; margin-top: 10%;gap: 5%;">
+    <h1>I Thread</h1>
+    <p class="fancy-paragraph">con l'ultimo aggiornamento del nostro sistema abbiamo aggiunto il multithreading e i thread <br> I thread sono unità di esecuzione parallele che, condividendo risorse, migliorano l’efficienza. Il multithreading permette di svolgere più attività simultaneamente all’interno di un singolo processo.
+    </p>
+  
+
+  
+      <h1>Cos'è un thread?</h1>
+      <p class="fancy-paragraph">Un thread è la più piccola unità di esecuzione all'interno 
+        di un processo. È un flusso di controllo che viene eseguito in parallelo ad altri thread
+        all'interno dello stesso processo, 
+        condividendo le risorse come memoria, variabili globali e file aperti.
+      </p>
+      
+  
+      <h1>Cos'è il multithreading?</h1>
+      <p class="fancy-paragraph">Il multithreading è una tecnica che permette l'esecuzione
+        simultanea di più thread all'interno di un singolo processo. Ogni thread opera 
+        indipendentemente, ma condivide le risorse del processo principale, come memoria e variabili globali.
+      </p>
+      
+
+      <h1>Configurazione per i thread del Sistema Operativo</h1>
+      <p class="fancy-paragraph">Zenith OS ha scelto una configurazione
+        in cui il sistema operativo utilizza più processi, ciascuno con più thread 
+        riuscendo a combinare il multiprocessing 
+        e multithreading per ottenere il massimo dell’efficienza. </p>
+        <ul class="fancy-paragraph">
+            <p>STRUTTURA:</p><br>
+            <li>Il sistema operativo gestisce più processi, ognuno 
+            dei quali esegue un’attività indipendente.</li>
+            <li>Ogni processo può avere più thread al suo interno, 
+                che eseguono compiti paralleli condividendo la memoria del processo.</li>
+            <li>I processi sono isolati tra loro, mentre i thread all'interno dello stesso 
+                processo condividono risorse.</li>
+        </ul>
+
+        <h1>Il nostro sistema multithreading Kernel-Level</h1>
+        <p class="fancy-paragraph">Il kernel-level multithreading offre prestazioni superiori in termini 
+            di parallelismo, gestione delle risorse, affidabilità e concorrenza, 
+            soprattutto su sistemi multi-core e in ambienti ad alte prestazioni. 
+            Sebbene abbia un overhead maggiore rispetto a un modello user-level 
+            (a causa delle chiamate di sistema per la gestione dei thread), 
+            i vantaggi in termini di gestione avanzata delle risorse e della capacità 
+            di eseguire thread su più core lo rendono una scelta preferita in molte 
+            situazioni.</p>
+        
+            <h1>Codice C  Java per la creazione dei Thread</h1>
+      <p class="fancy-paragraph">Questo è un esempio di codice C che simula 
+        la creazione di un thread all’interno del nostro sistema operativo.</h1>
+      <p class="fancy-paragraph">Essendo un sistema operativo open source rendiamo disponibili i codici per la creazione di un thread.
+        <br>
+      Questa semplice rappresentazione ci permette di 
+      visualizzare il pid del processo corrente e il tid del thread.
+      </p>
+      
+      </div>
+      <div style="flex-direction: row;margin-left: 20%;">
+        <img style="width: 40%;margin-bottom: 5%;"src="CodiceThread.png" alt="">
+        <img style="width: 50%;margin-bottom: 13%;"src="image.png" alt="">
+
+      </div>
+
+
+  <footer>
+  <span class="footer-brand">&copy; 2025 ZENITH</span>
+  <div class="footer-note">Contatti</div>
+  <div class="footer-note"><strong>email: </strong>lorenzolega@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    2363826381<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>marcomarasco@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    4656299210<br></div>
+  
+  <div class="footer-note"><strong>email: </strong>lorenzomangia@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    8737239823<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>samuelluggeri@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    7393223923<br></div>
+  </footer>
+
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
