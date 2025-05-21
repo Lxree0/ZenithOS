@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>ZENITH OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+  </style>
+</head>
+<body style="overflow-y: hidden;">
+  <div class="glow"></div>
+
+  <nav class="navbar">
+  <div class="logo">ZENITH</div>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="Whoarewe.html">chi siamo?</a></li>
+    <li><a href="ZenithOS.html">Il nostro Sistema operativo</a></li>
+    <li><a href="Thread.html">I thread</a></li>
+    <li><a href="Elaborazione.html">cose sulla programmazione parallela</a></li>
+  </ul>
+  </nav>
+
+
+  <header style="margin-top: 5%;">
+    <img src="Logo-removebg-preview.png" alt="ZENITH OS Logo">
+  </header>
+
+
+  <h1 style="margin-top: 5%;">ZENITH OS</h1>
+
+  <div class="tagline" style="margin-top: 2%;">Semplice. Efficiente. Unico.</div>
+  <footer>
+  <span class="footer-brand">&copy; 2025 ZENITH</span>
+  <div class="footer-note">Contatti</div>
+  <div class="footer-note"><strong>email: </strong>lorenzolega@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    2363826381<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>marcomarasco@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    4656299210<br></div>
+  
+  <div class="footer-note"><strong>email: </strong>lorenzomangia@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    8737239823<br></div>
+    
+  <div class="footer-note"><strong>email: </strong>samuelluggeri@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>contatto telefonico</strong>    7393223923<br></div>
+  </footer>
+
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
